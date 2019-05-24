@@ -1,0 +1,10 @@
+{
+    "rules":{
+        "function-url-quotes":"always",
+        "string-no-newline":true,
+        "string-quotes":"single",
+        "selector-max-id":0,
+        "keyframe-declaration-no-important":true,
+        "indentation":4
+    }
+}

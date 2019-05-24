@@ -1,0 +1,28 @@
+.showDays {
+    width: 83px;
+    height: 50px;
+    text-align: center;
+    background-color: #f1f1f1;
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.choosed {
+    color: #fff;
+    background: #03a9f4;
+}
+.iconChoose {
+    color: #03a9f4;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    font-size: 18px;
+    transform: translateX(-50%);
+}
+.showDateItem {
+    position: relative;
+    height: 60px;
+}

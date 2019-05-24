@@ -1,0 +1,28 @@
+{
+  "presets": [ "react-app"],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators", {
+        "legacy": true,
+      }
+    ],
+    [
+      "import", 
+          {
+              "libraryName": "antd-mobile",
+              "libraryDirectory": "lib",
+              "style": "css"
+          }
+  ],
+    [
+      "babel-plugin-named-asset-import",
+      {
+        "loaderMap": {
+          "svg": {
+            "ReactComponent": "@svgr/webpack?-prettier,-svgo![path]",
+          },
+        },
+      },
+    ],
+  ],
+}
