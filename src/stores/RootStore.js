@@ -4,7 +4,9 @@ import UserStore from './UserStore';
 import UIStore from './UIStore';
 import FinBookingStore from './FinBookingStore'
 import MyStore from './MyStore'
+import ListStore from './ListStore';
 import { action, decorate } from 'mobx';
+
 
 class RootStore {
     constructor() {
@@ -14,6 +16,7 @@ class RootStore {
         this.UIStore = new UIStore(this);
         this.finBookingStore = new FinBookingStore(this);
         this.myStore = new MyStore(this);
+        this.listStore = new ListStore(this);
     }
     /**
      * @description 发送POST请求
