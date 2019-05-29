@@ -100,7 +100,7 @@ class Home extends Component {
                         />
                     </Modal>
               <Link to='/my' className = {styles.link}>跳转到另一个页面</Link>
-
+              <Link to='/list' className = {styles.link}>跳转到列表</Link>
             </div>
         );
     }

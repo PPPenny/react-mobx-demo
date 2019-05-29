@@ -1,0 +1,10 @@
+.list {
+    background: #fff;
+}
+.item {
+    height: 300px;
+    margin: 10px 0;
+    background: #eee;
+    font-size: 20px;
+    text-align: center；
+}

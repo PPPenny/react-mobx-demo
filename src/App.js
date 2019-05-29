@@ -31,6 +31,8 @@ export default class App extends Component {
                     <ErrorBoundary>
                         <Route path="/" exact component={pageLoader(import('./pages/home/Home'))} />
                         <Route path="/my" exact component={pageLoader(import('./pages/my/Index'))} />
+                        <Route path='/list' exact component={pageLoader(import('./pages/list/Index'))}/>
+                        <Route path='/detail/:id' exact component={pageLoader(import('./pages/list/Detail'))}/>
                     </ErrorBoundary>
                 </Router>
             </Provider>
