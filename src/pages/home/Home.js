@@ -7,7 +7,7 @@
 
 import React, { Component } from 'react';
 import styles from './Home.module.css';
-import {Input,BookingTime} from '../../components'
+import {Input,BookingTime,AddTimer,SubTimer} from '../../components'
 import {inject,observer} from 'mobx-react';
 import { withRouter,Link} from 'react-router-dom';
 import { Modal } from 'antd-mobile'; 
@@ -101,6 +101,9 @@ class Home extends Component {
                     </Modal>
               <Link to='/my' className = {styles.link}>跳转到另一个页面</Link>
               <Link to='/list' className = {styles.link}>跳转到列表</Link>
+              <div><label>正向计时器</label><AddTimer/></div>
+              <div><label>倒计时(endTime 2019-08-27 00:00:00)</label>
+              <div><SubTimer endTime='2019-08-27 00:00:00'/></div></div>
             </div>
         );
     }

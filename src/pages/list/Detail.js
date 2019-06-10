@@ -13,7 +13,6 @@ class Detail extends Component{
         this.props.history.goBack();
     }
     onChangeInput=(e)=>{
-        console.log("1111");
         const target = e.target;
         this.props.listStore.setData(this.id,target.value)
 

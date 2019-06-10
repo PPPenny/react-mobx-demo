@@ -21,9 +21,13 @@ class List extends Component{
      handleClickItem=(id)=>{
         this.props.history.push(`/detail/${id}`);
      }
+     handleBackClick=()=>{
+         this.props.history.goBack();
+     }
     render(){
         return(<div className={styles.list}>
            {this.renderListItem()}
+           <button onClick={this.handleBackClick}>返回上一页</button>
         </div>)
     }
 
