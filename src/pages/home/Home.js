@@ -1,8 +1,8 @@
 /*
  * @Author: Penny 
  * @Date: 2019-05-23 10:47:10 
- * @Last Modified by: Penny
- * @Last Modified time: 2019-05-24 13:57:31
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2019-09-20 14:21:17
  */
 
 import React, { Component } from 'react';
@@ -101,9 +101,10 @@ class Home extends Component {
                     </Modal>
               <Link to='/my' className = {styles.link}>跳转到另一个页面</Link>
               <Link to='/list' className = {styles.link}>跳转到列表</Link>
+              <Link to='/animate' className = {styles.link}>跳转到动画页面</Link>
               <div><label>正向计时器</label><AddTimer/></div>
-              <div><label>倒计时(endTime 2019-08-27 00:00:00)</label>
-              <div><SubTimer endTime='2019-08-27 00:00:00'/></div></div>
+              <div><label>倒计时(endTime 2020-08-27 00:00:00)</label>
+              <div><SubTimer endTime='2020-08-27 00:00:00'/></div></div>
             </div>
         );
     }

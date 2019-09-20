@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from './ShowDate.module.css';
 import PropTypes from 'prop-types';
-// import IconCaec from '../../base-components/IconCaec';
 export default class ShowDate extends Component {
     constructor(props) {
         super(props);

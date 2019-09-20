@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import styles from './App.module.css';
 import { Provider } from 'mobx-react';
 import rootStore from './stores/RootStore';
 import loadable from 'react-loadable';
 import ErrorBoundary from './components/ErrorBoundary';
+import Loading from './components/Loading'
 
 //加载新页面的过度loader
 const MyLoadingComponent = ({ isLoading, error }) => {
     if (isLoading) {
-        return <div className={styles.loaderContainer}>请自己添加loading</div>;
+        return <Loading />;
     } else if (error) {
         return <div>加载页面出错，请刷新</div>;
     } else {
@@ -31,6 +31,7 @@ export default class App extends Component {
                     <ErrorBoundary>
                         <Route path="/" exact component={pageLoader(()=>import('./pages/home/Home'))} />
                         <Route path="/my" exact component={pageLoader(()=>import('./pages/my/Index'))} />
+                        <Route path='/animate' exact component={pageLoader(()=>import('./pages/animate/Index'))} />
                         <Route path='/list' exact component={pageLoader(()=>import('./pages/list/Index'))}/>
                         <Route path='/detail/:id' exact component={pageLoader(()=>import('./pages/list/Detail'))}/>
                     </ErrorBoundary>
