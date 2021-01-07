@@ -116,7 +116,7 @@ const MemberList = inject('memberStore')(
                             <p>喜欢：{it.like}</p>
                             <div className={styles.listBtnWrap}>
                                 <Button className={styles.searchBtn} inline onClick={() => this.handleUpdate(it)} size="small" type="primary">修改</Button>
-                                <Button inline onClick={() => this.handleDelete(it.id)} size="small" type="primary">删除</Button>
+                                <Button inline onClick={() => this.handleDelete(it.id)} size="small" type="warning">删除</Button>
                             </div>
                         </div>)
                     })
