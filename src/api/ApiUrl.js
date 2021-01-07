@@ -1,8 +1,10 @@
 //发布后的相对根目录
 const ROOT = `${process.env.PUBLIC_URL}/api`;
 const urls = {
-    LOGIN: '/login', //密码登录   示例代码，可以删除
-    REGISTER: '/login' //用户注册  示例代码，可以删除
+    USER_LIST: '/userList', //用户信息列表
+    ADD_USER: '/add',//新增用户
+    DELETE_USER:'/delete',//删除用户
+    UPDATE_USER:'/updateUser'//修改用户
 };
 for (let key in urls) {
     if (Object.prototype.hasOwnProperty.call(urls, key)) {

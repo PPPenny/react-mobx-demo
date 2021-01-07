@@ -18,7 +18,7 @@ const MyLoadingComponent = ({ isLoading, error }) => {
 };
 // 页面导入组件
 const pageLoader = importFuction => {
-    return loadable({delay:300, loader:importFuction, loading: MyLoadingComponent });
+    return loadable({ delay: 300, loader: importFuction, loading: MyLoadingComponent });
 };
 /**
  * 如果要移除切换动画，请删除组件 AnimatedSwitch
@@ -29,11 +29,15 @@ export default class App extends Component {
             <Provider {...rootStore}>
                 <Router basename={process.env.PUBLIC_URL}>
                     <ErrorBoundary>
-                        <Route path="/" exact component={pageLoader(()=>import('./pages/home/Home'))} />
-                        <Route path="/my" exact component={pageLoader(()=>import('./pages/my/Index'))} />
-                        <Route path='/animate' exact component={pageLoader(()=>import('./pages/animate/Index'))} />
-                        <Route path='/list' exact component={pageLoader(()=>import('./pages/list/Index'))}/>
-                        <Route path='/detail/:id' exact component={pageLoader(()=>import('./pages/list/Detail'))}/>
+                        <Route path="/" exact component={pageLoader(() => import('./pages/home/Home'))} />
+                        <Route path='/demo' exact component={pageLoader(() => import('./pages/home/Demo'))} />
+                        <Route path='/params' exact component={pageLoader(() => import('./pages/demo/Father'))} />
+                        <Route path='/bind' exact component={pageLoader(() => import('./pages/demo/BindThis'))} />
+                        <Route path="/my" exact component={pageLoader(() => import('./pages/my/Index'))} />
+                        <Route path='/animate' exact component={pageLoader(() => import('./pages/animate/Index'))} />
+                        <Route path='/list' exact component={pageLoader(() => import('./pages/list/Index'))} />
+                        <Route path='/detail/:id' exact component={pageLoader(() => import('./pages/list/Detail'))} />
+                        <Route path='/member/list' exact component={pageLoader(() => import('./pages/member/List'))} />
                     </ErrorBoundary>
                 </Router>
             </Provider>

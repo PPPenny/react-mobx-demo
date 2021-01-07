@@ -137,7 +137,7 @@ export default class Agent {
 
         return fetch(fullUrl, rq)
             .then(this.handleResponse)
-            .then(json => json)
+            .then(json =>json)
             .catch(this.handleCatch);
     }
 

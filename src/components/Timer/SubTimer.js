@@ -13,15 +13,10 @@ export default class SubTimer extends Component {
         this.setTime(this.allSecond);
         this.sysTime = this.props.sysTime || moment().format('YYYY-MM-DD HH:mm:ss');
     }
-    render() {
-        this.props.timerCallBack && this.props.timerCallBack();
-        return <span className={this.props.className}>{this.state.time}</span>;
-    }
-
     componentWillUnmount = () => {
         // 清理定时器
         clearTimeout(this.setTimer);
-    };
+    }
     renderTime = allSeconds => {
         let allSecond = allSeconds;
         const time = allSecond * 1000;
@@ -30,7 +25,7 @@ export default class SubTimer extends Component {
         const min = moment.duration(time).minutes();
         const sec = moment.duration(time).seconds();
         return `${day}天${hour}时${min}分${sec}秒`;
-    };
+    }
     setTime = allSeconds => {
         this.setTimer = setTimeout(() => {
             let allSecond = allSeconds;
@@ -43,7 +38,12 @@ export default class SubTimer extends Component {
             this.setState({ time: this.renderTime(allSecond) });
             this.setTime(allSecond);
         }, 1000);
-    };
+    }
+    render() {
+        this.props.timerCallBack && this.props.timerCallBack();
+        return <span className={this.props.className}>{this.state.time}</span>;
+    }
+
 }
 SubTimer.propTypes = {
     //截止时间

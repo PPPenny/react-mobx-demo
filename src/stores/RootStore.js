@@ -5,6 +5,7 @@ import UIStore from './UIStore';
 import FinBookingStore from './FinBookingStore'
 import MyStore from './MyStore'
 import ListStore from './ListStore';
+import MemberStore from './MemberStore';
 import { action, decorate } from 'mobx';
 
 
@@ -17,6 +18,7 @@ class RootStore {
         this.finBookingStore = new FinBookingStore(this);
         this.myStore = new MyStore(this);
         this.listStore = new ListStore(this);
+        this.memberStore = new MemberStore(this);
     }
     /**
      * @description 发送POST请求
@@ -40,7 +42,7 @@ class RootStore {
     sendGet(url, _params, showLoading) {
         showLoading && this.showLoading();
         const params = this._buildParams(_params);
-        return this.agent.get(url, params).then(json => this._handleData(json, url, params));
+        return this.agent.get(url, params).then(json =>this._handleData(json, url, params));
     }
     /**
      * @description 显示提示信息，默认3秒
@@ -98,18 +100,18 @@ class RootStore {
      */
     _handleData(json, url, params) {
         this.hideLoading();
-        if (!json || json.result === undefined) return {};
-        switch (json.result) {
+        if (!json || json.code === undefined) return {};
+        switch (Number(json.code)) {
             //获取数据成功
-            case '0':
+            case 0:
                 return json;
             //token过期
-            case '-1':
+            case -1:
                 return this.UIStore.refreshToken(url, params);
             //自动显示错误信息
             default: {
-                console.log(`Requst is get Error,Code :${json.result}`);
-                const msg = ResponseCode.showMsg(json.result);
+                console.log(`Requst is get Error,Code :${json.code}`);
+                const msg = ResponseCode.showMsg(json.code);
                 msg && this.showToast(msg);
                 return json;
             }

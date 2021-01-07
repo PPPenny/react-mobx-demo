@@ -12,7 +12,6 @@ export default class BookingTime extends Component {
         super(props);
         const dateObj = this.props.initTime;
         this.initDateData(); //初始化所有日期数据
-        console.log("111");
         this.state = {
             currentDay: (dateObj && dateObj.currentDay) || this.initDate(), //当前选择的日期
             currentDayIndex: (dateObj && dateObj.currentDayIndex) || 0, //当前选择的日期index，匹配选中

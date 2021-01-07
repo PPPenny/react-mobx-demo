@@ -1,0 +1,52 @@
+.wrap{
+    background: #eee;
+    position: relative;
+}
+.searchContent{
+    display: flex;
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: static;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+
+}
+.input{
+    flex: 1;
+    height: 30px;
+    border-radius: 8px;
+    padding-left: 10px;
+    border: 1px solid #999;
+}
+.searchBtn{
+    margin:0 10px;
+}
+.listItem{
+    background: #fff;
+    padding:10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.btnWrap{
+    padding:10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.addItem{
+    line-height: 2em;
+    margin-bottom: 10px;
+    display: flex;
+    padding:0 10px;
+}
+.label{
+    width: 4em;
+}
+.listBtnWrap{
+    position: absolute;
+    top:10px;
+    right: 10px;
+}

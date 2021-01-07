@@ -3,12 +3,12 @@
  */
 const proxy = require('http-proxy-middleware');
 
-module.exports = function(app) {
+module.exports = function (app) {
     app.use(
         proxy('/api', {
-            target: 'http://127.0.0.1:8081',
+            target: 'http://127.0.0.1:7001',
             pathRewrite: {
-                '^/api': '' //重写代理的路径，如http://localhost:8888/api/login会被代理到http://127.0.0.1:8081/login
+                '^/api': ''
             }
         })
     );

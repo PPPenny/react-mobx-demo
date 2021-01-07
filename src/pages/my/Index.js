@@ -3,10 +3,10 @@ import styles from './Index.module.css';
 import { observer, inject } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 
-const Login = inject('myStore')(
+const MyIndex = inject('myStore')(
     withRouter(
         observer(
-            class Login extends Component {
+            class MyIndex extends Component {
 
                 changeInput = (e,type)=>{
                     this.props.myStore.setValue(e.target.value,type)
@@ -47,4 +47,4 @@ const Login = inject('myStore')(
     )
 );
 
-export default Login;
+export default MyIndex;
